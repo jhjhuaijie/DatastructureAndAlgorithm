@@ -46,14 +46,32 @@ void SelectSort(int A[], int n)
 	return;
 }
 #pragma endregion —°‘Ò≈≈–Ú
+#pragma region ≤Â»Î≈≈–Ú
+void InsertSort(int A[], int n)
+{
+	for (int i = 1; i < n; i++)
+	{
+		int temp = A[i];
+		int j = i - 1;
+		while (j >= 0 && A[j]>temp)
+		{
+			A[j + 1] = A[j];
+			j--;
+		}
+		A[j + 1] = temp;
+	}
+
+}
+#pragma endregion ≤Â»Î≈≈–Ú
 int main()
 {
-	int arr[] = { 6, 5, 3, 1, 8, 7, 2, 4 };
+	int arr[] = { 6, 5, 3, 1, 8, 7, 2, 4,11,3 };
 	int len = sizeof(arr)/sizeof(int);
 
 	//BubbleSort(arr, len);
 
-	SelectSort(arr, len);
+	//SelectSort(arr, len);
+	InsertSort(arr, len);
 	for (auto item : arr)
 	{
 		cout << item << " ";
